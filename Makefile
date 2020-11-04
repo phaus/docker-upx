@@ -1,15 +1,5 @@
-VERSION=3.91
+VERSION=3.96
 
 build:
-	rm -rf release
-	docker build -t upx-bin build
-	docker run --rm -v $(shell pwd)/release:/release upx
-	docker build -t lalyos/upx .
-
-deps:
-	go get github.com/progrium/gh-release
-
-release: build
-	gh-release create lalyos/docker-upx $(VERSION)
-
-.PHONY: build
+	docker build --build-arg UPX_VERSION=$(VERSION) -t phaus/upx:$(VERSION) .
+	docker tag phaus/upx:$(VERSION) phaus/upx:latest

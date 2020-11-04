@@ -3,13 +3,15 @@
 Lets save the interweb, and make all binaries small. This tiny (1.1MB) Docker image
 is a containerized [upx](http://upx.sourceforge.net).
 
+Forked from lalyos/docker-upx.  
+
 ## Usage
 
 
 You can compress your binary file as:
 
 ```
-$ docker run -v $PWD:/data lalyos/upx mybinary
+$ docker run -v $PWD:/data phaus/upx mybinary
 ```
 
 ## Go for even smaller
@@ -25,7 +27,7 @@ $ docker run --rm -v $PWD:/data  lalyos/upx -k --best --ultra-brute docker
 
                        Ultimate Packer for eXecutables
                           Copyright (C) 1996 - 2013
-UPX 3.91        Markus Oberhumer, Laszlo Molnar & John Reiser   Sep 30th 2013
+UPX 3.96        Markus Oberhumer, Laszlo Molnar & John Reiser   Sep 30th 2013
 
         File size         Ratio      Format      Name
    --------------------   ------   -----------   -----------
